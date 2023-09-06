@@ -9,9 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
-Test:
+jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +33,7 @@ Test:
 
 build:
 
-    needs: Test
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
